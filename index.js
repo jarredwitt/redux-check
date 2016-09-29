@@ -1,21 +1,27 @@
-let _validations;
-export default validations => {
+"use strict";
+
+var _validations = void 0;
+module.exports = function (validations) {
   _validations = validations;
-  return store => next => action => {
-    const validation = _validations[action.type];
+  return function (store) {
+    return function (next) {
+      return function (action) {
+        var validation = _validations[action.type];
 
-    if (!validation) return next(action);
+        if (!validation) return next(action);
 
-    const state = store.getState()[validation.state];
+        var state = store.getState()[validation.state];
 
-    const result = validation.validator(state, action);
+        var result = validation.validator(state, action);
 
-    if (!result) {
-      return next(action);
-    }
+        if (!result) {
+          return next(action);
+        }
 
-    if (validation.error) {
-      return store.dispatch(validation.error(result));
-    }
+        if (validation.error) {
+          return store.dispatch(validation.error(result));
+        }
+      };
+    };
   };
-}
+};
