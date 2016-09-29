@@ -1,0 +1,15 @@
+{
+  "name": "redux-check",
+  "author": "Jarred Witt",
+  "description": "Redux middleware for validating state and action objects.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jarredwitt/redux-check"
+  },
+  "keywords": [
+    "redux",
+    "redux validation"
+  ],
+  "version": "1.0.0",
+  "license": "MIT"
+}
