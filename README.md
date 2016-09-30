@@ -37,6 +37,9 @@ A validator object looks like the following:
 * error - The action object that will be dispatched if the validation resulted in an error. Uses store.dispatch() to dispatch an action.
 
 ###Setup
+```
+npm install redux-check --save
+```
 The order of the middleware does matter. In my case I needed it to run before redux-saga did so I placed it before the redux-saga middleware.
 ```
 import { applyMiddleware, createStore } from 'redux';
